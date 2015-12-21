@@ -1,0 +1,24 @@
+﻿Build started 2015-12-21 오후 8:20:40.
+     1>Project "C:\Users\moran kim\Desktop\cs lectures\Advanced Algorithm2 2015.2nd\FinalProject\CirclePacking_Code - 복사본\CirclePacking\CirclePacking\CirclePacking.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(53): warning C4244: 'initializing' : conversion from 'double' to 'const float', possible loss of data
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(67): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(82): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(184): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(191): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(237): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(290): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(303): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(316): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(335): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\moran kim\desktop\cs lectures\advanced algorithm2 2015.2nd\finalproject\circlepacking_code - 복사본\circlepacking\circlepacking\source.cpp(353): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\moran kim\Desktop\cs lectures\Advanced Algorithm2 2015.2nd\FinalProject\CirclePacking_Code - 복사본\CirclePacking\Debug\CirclePacking.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\moran kim\Desktop\cs lectures\Advanced Algorithm2 2015.2nd\FinalProject\CirclePacking_Code - 복사본\CirclePacking\Debug\CirclePacking.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\moran kim\Desktop\cs lectures\Advanced Algorithm2 2015.2nd\FinalProject\CirclePacking_Code - 복사본\CirclePacking\Debug\CirclePacking.lib" /MACHINE:X86 Debug\Source.obj
+         CirclePacking.vcxproj -> C:\Users\moran kim\Desktop\cs lectures\Advanced Algorithm2 2015.2nd\FinalProject\CirclePacking_Code - 복사본\CirclePacking\Debug\CirclePacking.exe
+     1>Done Building Project "C:\Users\moran kim\Desktop\cs lectures\Advanced Algorithm2 2015.2nd\FinalProject\CirclePacking_Code - 복사본\CirclePacking\CirclePacking\CirclePacking.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.54
