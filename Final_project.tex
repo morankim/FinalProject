@@ -1,0 +1,121 @@
+\documentclass{SOP_KimMoran}
+\dateAccepted{November 6 2015}
+
+\usepackage{amsmath, amssymb, latexsym}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage[autostyle]{csquotes}
+\usepackage{float}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+
+\title[Final Projcet]
+{Final Projcet\\ A Circle Packing Algorithm in 2D}
+
+
+\author{MORAN KIM}
+\address{Department of Mathematics\\
+  Ewha Womans University\\South Korea}
+\email{moran.kim.9@gmail.com}
+
+\maketitle
+\section{contract}
+In my final project, I want to do implementing a circle packing in 2 dimension. I studied about it when I undergraduate student. But I did not implemented it myself. I want to try it as my final project. And want to deepen my understanding about the proof of convergence of a method, used to construct a circle packing. I will follow the paper [ A circle packing algorithm] written by Charles R. Collins and  Kenneth Stephenson. This paper published at "Computational Geometry" in 2003. In this paper they introduced the "Uniform Neighbor Method" to get a circle packing in 2D. The proof of the convergence using UNM is not fully described. Therefore, I want to set my goal of this projcet as, 1) Summarizing the algorithm(20 \%), 2) Implementation for circle packing algorithm using UNM method(50\%), 3) Prove the convergence(20\%). and if necessary(if possible)(10\%), I will add a contribution to this UNM method.
+
+\section{Summary of a circle packing algorithm}
+  A circle packing algorithm is a configuration of circles realizing a specified pattern of tangencies. Packing combinatorics are encoded in abstract simplicial 2-complexes K which triangulate oriented topological surfaces. This algorithm is restricted to the case in which K is a finite triangulation of a closed topological disc. \\
+\begin{figure}[H]
+  \includegraphics[width=100mm]{input.jpg}
+\end{figure}
+$[Complexes]$\\
+The vertices of K are of two types, interior and boundary. If we call a neighboring circle as a petal, when $v$ is interior, the list of petals is closed. i.e. the circle with center $v$ is surrounded by the petals if $v$ is an interior vertex.\bigskip \\
+$[Packings]$\\
+A configuration $P$ of circles in the euclidean plane is a circle packing for $K$ if it has a circle $C_v$ associated with each vertex $v$ of $K$ so that the following conditions hold: (1) if there is a neighboring  edge between $u$ and $v$, then $C_u$ and $C_v$ are mutually tangent, and if (2) $<u,v,w>$ is a positively oriented face of K, then $<C_u,C_v,C_w>$ is a positively oriented triple of mutually tangent circles.\bigskip \\
+$[Labels]$\\
+A labe(putative radius)l for $K$ can be thought of as a function $R:K^{(0)}\to(0,\infty)
+$ assigning a positive value to each vertex of $K$.\bigskip \\
+$[Angle Sums]$\\
+Given labels$x,y,z\in(0,\infty)$, lay out a mutually tangent triple $<c_x,c_y,c_z>$ of circles in the plane with radii $x,y,z$ and connect the circle centers to form a triangle $T$. The angle of $T$ at the center of $C_x$, denoted by $\alpha(x;y,z),$ can be computed from the labels using the law of sines.
+\begin{figure}[H]
+  \includegraphics[width=100mm]{anglesum.jpg}
+\end{figure}
+$a(v;u,w)=2\sin^{\small -1}(\sqrt{\frac{u}{v+u}\frac{w}{v+w}})$\\
+A set of circles $C_v, C_{v1}, ..., C_{vk}$ with labels from $R$, which is circle packing label, will fit together coherently in the plane if and only if $\theta(v;R)=2\pi n$ for some integer $n\geq 1.$\\
+\indent Given a complex $K$, a label $R$ is said to satisfy the packing condition at an interior vertex $v\in R$ if $\theta(v;R)=2\pi n$ for some integer $n\geq 1.$ The label $R$ is said to be a packing label if the packing condition is satisfied at every interior vertex. \\
+\indent In this paper it assumes with boundary conditions(appropriate labels for boundary vertices) a circle packing exists uniquely.\bigskip \\
+$[The Uniform Neighbor Model(UNM)]$\\
+\indent Focusing on the flower for $v$, we treat the label r as a variable, and the petal labels $r_1,...,r_k$ as fixed parameters. For a given value $r=r_0$, the associated "reference" label is the number $\hat{r}$ for which the following equality holds:\\
+\centerline{$ \theta(r_0;r_1,...,r_k)=\theta(r_0;\underbrace{\hat{r},...,\hat{r}}_\text{k} )=:\hat{\theta}(r_0;\hat{r})$}.
+In other words, laying out a flower with petal circles of the uniform radius $\hat{r}$ would yield the same angle sum as with the original petal radii $r_1,...,r_k$ when the center circle has radius $r_0.$\\
+Using the UNM requires two steps. First, given a value for $v$, determine $\hat{v}$ so that $\hat{\theta}(v;\hat{v})=\theta(v;\{v_j\})$. Second, solve for a new value for $v$(call it $u$) so that $\hat{\theta}(u;\hat{v})=A(v)$. where $A(v)$ represent the goal angle sum at the vertex $v$. In our case the $A(v)=2\pi$ for every interior vertex $v$. The advantage of UNM methods is that these equations can be solved explicitly as follows.\\
+\begin{figure}[H]
+  \includegraphics[width=150mm]{eq.jpg}
+\end{figure}
+
+
+\section{Proof of the Convergence of Uniform Neighbor Model method}
+
+\textbullet Notation\\
+For a label $R$, define "excess" e at an interior vertex $v$ and the "total error" $E$ by \bigskip \\
+\centerline{$e(v)=\theta(v;R)-A(v), \hspace{0.3cm}E=E(R)=\sum_{v:interior}|e(v)|$}
+
+\begin{lemma}
+Let $\theta(r)=\theta(r;r_1,...,r_k)$ and $\hat{\theta}(r)=\theta(r;\hat{r})=\theta(r;\underbrace{\hat{r},...,\hat{r_k}}_\text{k})$ with $\hat{r}$ chosen so that $\theta(r_0)=\hat{\theta}(r_0)$ for some $r_0>0$. Assuming labels $r_1,...,r_k$ are not all equal, then 
+\centerline{$\frac{d\hat{\theta}}{dr}(r_0)<\frac{d\theta}{dr}(r_0)$},
+Moreover, $\theta(r)<\hat{\theta}(r)$ for $0<r<r_0$ and $\theta(r)>\hat{\theta}(r)$ for $r>r_0$.
+\end{lemma}
+\begin{figure}[H]
+  \includegraphics[width=110mm]{lemma.jpg}
+\end{figure}
+
+\begin{lemma}
+$E$ is monotone decreasing with $UNM$ label correction.
+\end{lemma}
+\begin{proof}
+  Let $F$ denote the number of faces of $K$. Each has three angles which sum to $\pi$. The total angle is $\sum_{v\in K}\theta(v;R)=F\pi$, independent of $R$. Thus the total angle is a conserved quantity and so any adjustment of a label simply causes a redistribution of that angle among the vertices.\\
+(1) $e(v)>0$; Suppose that $\theta(v;R)$ is too large at some interior $v$, so $e(v)>0$. Let us increase the label $R(v)$ until $e(v)=0$. Since we can sequentially correct the labels. At worst, $E$ remains unchanged. 
+\begin{figure}[H]
+  \includegraphics[width=150mm]{process.jpg}
+\end{figure}
+If $u$ and $v$ are neighboring vertices and $u$ is an interior vertex or u is a boundary vertex, then the correction to $R(v)$ simultaneously reduces $|e(u)|$ and $|e(v)|$, and so $E$ decreases.
+\begin{figure}[H]
+  \includegraphics[width=110mm]{exp3.jpg}
+\end{figure}
+  For $e(v)<0$, we can simply apply same logic. Since we defined the error as  sums of the differece of the current angle sum and the target angle sum(in our case, target angle sum=2$\pi$), If we do correction to $R(v)$ with $UNM$ method then e(v) can only be decreased. Therefore $E$ cannot increase.
+\end{proof}
+
+
+\section{Limitations in the Implementation}
+I constructed a Circle Packing algorithm with Uniform Neighbor Model[1]. In my program the inputs are set of vertices and the connection information between two vertices. Then the program outputs a configuration of circle packing $P$.
+\begin{figure}[H]
+  \includegraphics[width=130mm]{inputinfo.jpg}
+\end{figure}
+
+When I presented in 12/17 Thursday, there was an error with the locating part with disc. I tried to fix it. But there is still errors. In my code, it works well only with the vertices which have special character. I want to show one example. The input file is "complex1.txt" and the boundary vertices and the $UNM$ results of radii is like this.
+\begin{figure}[H]
+  \includegraphics[width=110mm]{error.jpg}
+\end{figure}
+The output difference between the two case is that, the vertex $v[5]$ has a special property. With $v[5]$, since its neighbor vertices are all interior, the positions of circles tightly located for the begin. However, the with $v[11]$, even though it
+is an interior point since some of the neighboring vertices are not interior they causes a problem(only in my code). I need to see the locating part further.
+\begin{figure}[H]
+  \includegraphics[width=110mm]{comparecp.jpg}
+\end{figure}
+The following two pictures describe the locating discs part. As we can see in the first picture,we need to give a location of the firs disc with user defined (x,y) positions. And then we iteratively find appropriate discs' positions. 
+\begin{figure}[H]
+  \includegraphics[width=160mm]{exp1.jpg}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=160mm]{exp2.jpg}
+\end{figure}
+
+\section{conclusion}
+In this final project, I had to understand the paper clearly and then summarize. and based on the understanding I need to implement the circle packing algorithm using $UNM$ method. I did those part. I did everything from scratch.  But there are insufficients in the "proving convergence in Error" and a "contribution" parts. I tried to prove that the error $E$ monotone decreasing. To show this we need the lemmas in the paper. Using these lemmas I can prove this 'convergence' part by only drawing some examples and considering them.\\
+\centerline{$e(v)=\theta(v;R)-A(v), \hspace{0.3cm}E=E(R)=\sum_{v:interior}|e(v)|$}
+i.e. in the proving part I did not prove it mathematically rather I used some pictures to understand the claim(Error is monotone decreasing) in the paper. and I did not attatch contributions here. and there are still errors with disc locating part.  
+
+\end{document}
