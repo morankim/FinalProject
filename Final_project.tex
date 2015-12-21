@@ -24,7 +24,7 @@
 \email{moran.kim.9@gmail.com}
 
 \maketitle
-\section{contract}
+\section{Contract}
 In my final project, I want to do implementing a circle packing in 2 dimension. I studied about it when I undergraduate student. But I did not implemented it myself. I want to try it as my final project. And want to deepen my understanding about the proof of convergence of a method, used to construct a circle packing. I will follow the paper [ A circle packing algorithm] written by Charles R. Collins and  Kenneth Stephenson. This paper published at "Computational Geometry" in 2003. In this paper they introduced the "Uniform Neighbor Method" to get a circle packing in 2D. The proof of the convergence using UNM is not fully described. Therefore, I want to set my goal of this projcet as, 1) Summarizing the algorithm(20 \%), 2) Implementation for circle packing algorithm using UNM method(50\%), 3) Prove the convergence(20\%). and if necessary(if possible)(10\%), I will add a contribution to this UNM method.
 
 \section{Summary of a circle packing algorithm}
@@ -117,5 +117,14 @@ The following two pictures describe the locating discs part. As we can see in th
 In this final project, I had to understand the paper clearly and then summarize. and based on the understanding I need to implement the circle packing algorithm using $UNM$ method. I did those part. I did everything from scratch.  But there are insufficients in the "proving convergence in Error" and a "contribution" parts. I tried to prove that the error $E$ monotone decreasing. To show this we need the lemmas in the paper. Using these lemmas I can prove this 'convergence' part by only drawing some examples and considering them.\\
 \centerline{$e(v)=\theta(v;R)-A(v), \hspace{0.3cm}E=E(R)=\sum_{v:interior}|e(v)|$}
 i.e. in the proving part I did not prove it mathematically rather I used some pictures to understand the claim(Error is monotone decreasing) in the paper. and I did not attatch contributions here. and there are still errors with disc locating part.  
+\begin{thebibliography} {99}
+
+\bibitem{Bochner} C.Collins, K. Stephenson
+{A circle packing algorithm},
+ J. Comp. Geom. {\bf 25} (2003), 233-256.
+
+
+
+\end{thebibliography}
 
 \end{document}
